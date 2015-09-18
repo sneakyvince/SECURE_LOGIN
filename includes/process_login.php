@@ -48,15 +48,16 @@ if (isset($_POST['email'], $_POST['p'])) {
     if (login($email, $password, $mysqli) == true) {
         // Login success 
       
-      if(login($admin ==2)) {
-      header("Location: ../adminpanel.php");
-      exit(); 
-      }  
-        
-        else {
+      if($_SESSION["admin"] == 2 ){
+           header("Location: ../adminpanel.php");
+        exit();
+          
+        } else {
         header("Location: ../protected_page.php");
         exit();
         }
+        
+        
         
     } else {
         // Login failed 

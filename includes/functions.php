@@ -43,7 +43,7 @@ function sec_session_start() {
     session_regenerate_id();    // regenerated the session, delete the old one. 
 }
 
-function login($email, $password, $admin, $mysqli) {
+function login($email, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT id, username, password, salt, admin 
 				  FROM members 
@@ -82,7 +82,7 @@ function login($email, $password, $admin, $mysqli) {
 
                     $_SESSION['username'] = $username;
                     $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
-
+                    $_SESSION['admin'] = $admin;
                     // Login successful. 
                     return true;
                 } else {

@@ -1,4 +1,6 @@
 <?php
+    
+ob_start();
 /**
  * Copyright (C) 2013 peredur.net
  *
@@ -26,35 +28,20 @@ if (login_check($mysqli) == true) {
     $logged = 'out';
 }
 
+if(isset($_SESSION['admin'])) {
 
+if($_SESSION['admin'] !=2) {
+    echo '<h2>Please check the the captcha form.</h2>';     
+    header("refresh:5;url=.index.php?error=1");
+    exit;
+}
 
-
-
-
-if (isset($_POST['email'], $_POST['p'])) {
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $password = $_POST['p']; // The hashed password.
-    
-    if (login($email, $password, $mysqli) == true) {
-        // Login success 
-        if(login($email, $password, $mysqli, $admin == 1) == true)
-        
-        header("Location: ../protected_page.php");
-        exit();
-    } else {
-        // Login failed 
-        header('Location: ../index.php?error=1');
-        exit();
-    }
+       
 } else {
-    // The correct POST variables were not sent to this page. 
-    header('Location: ../error.php?err=Could not process login');
-    exit();
-}     
-          
-          
-          
-        
+    echo '<h2>Please check the the captcha form.</h2>';     
+    header("refresh:5;url=index.php?error=1");
+    exit;
+}   
         
         
         
@@ -82,3 +69,6 @@ if (isset($_POST['email'], $_POST['p'])) {
         <p>You are currently logged <?php echo $logged ?>.</p>
     </body>
 </html>
+
+
+<?php ob_flush();?>
