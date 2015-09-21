@@ -78,10 +78,9 @@ if($_SESSION['admin'] !=2) {
             $stmt = $db->prepare($sql);
             $stmt->execute();
             
-            
             $linkdeleteuser ="<a href='delete_user.php'>verwijder</a>";
             echo ' <table class="tg"> ';
-            while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC))
             { 
                 echo "<tr><td>" .$row['id']."</td><td>".$row['username']."</td><td>".$row['email']."</td><td>".$row['admin']."</td><td>".$row[$linkdeleteuser]."</td></tr>";
             }
