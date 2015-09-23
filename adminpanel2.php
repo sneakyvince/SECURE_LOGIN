@@ -29,7 +29,7 @@ if (login_check($mysqli) == true) {
 
 if(isset($_SESSION['admin'])) {
 
-if($_SESSION['admin'] !=2 && $_SESSION['admin'] !=1) {
+if($_SESSION['admin'] !=2) {
     echo '<h2>You are not an Admin!</h2>';     
     header("refresh:5;url=.index.php?error=1");
     exit;
@@ -83,7 +83,8 @@ if($_SESSION['admin'] !=2 && $_SESSION['admin'] !=1) {
             while($row = $stmt->fetch(PDO::FETCH_ASSOC) ) 
             { 
                 $linkdeleteuser ="<a href='delete_user.php?id=".$row['id']."'>verwijder</a>";
-                echo "<tr><td>" .$row['id']."</td><td>".$row['username']."</td><td>".$row['email']."</td><td>".$row['admin']."</td><td>".$linkdeleteuser."</td></tr>";
+				$linkadadmin ="<a href='add_admin.php?id=".$row['id']."'>maak admin</a>";
+                echo "<tr><td>" .$row['id']."</td><td>".$row['username']."</td><td>".$row['email']."</td><td>".$row['admin']."</td><td>".$linkdeleteuser."</td><td>".$linkadadmin."</td></tr>";
             }
             
             echo "</table>";

@@ -1,4 +1,4 @@
-<?php
+<?php 
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -11,13 +11,11 @@ try {
 
     // sql to delete a record
 	$id =$_GET['id'];
-    
-    echo $id;
-    $sql = "DELETE FROM members WHERE id=".$id;
+    $sql = "UPDATE members SET admin='1' WHERE id=".$id;
 
     // use exec() because no results are returned
     $conn->exec($sql);
-    echo "Record '$id' deleted successfully";
+    echo "Record '$id' made admin successfully";
     }
 catch(PDOException $e)
     {
