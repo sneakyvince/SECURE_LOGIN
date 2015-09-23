@@ -49,7 +49,7 @@ if (isset($_POST['email'], $_POST['p'])) {
         // Login success 
       
       if($_SESSION["admin"] == 2 ){
-           header("Location: ../adminpanel.php");
+           header("Location: ../adminpanel2.php");
         exit();
           
         } else {
