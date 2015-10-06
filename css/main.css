@@ -12,8 +12,7 @@ html {
 }
 
 ::selection {
-    background: #000;
-    color: #fff;
+    background: #b3d4fc;
     text-shadow: none;
 }
 
@@ -53,121 +52,54 @@ textarea {
 }
 
 
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
-    height:100%;
-}
-
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
-}
-
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.header-container {
-}
-
-.footer-container,
-.main aside {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    overflow: hidden;
-    
-}
-
-.header-container,
-.footer-container,
-.main aside {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.title {
-    color: black;
-}
-
-/* ==============
-    MOBILE: Menu
-   ============== */
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: black;
-}
-
-nav a:hover,
-nav a:visited {
-    color: black;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
-}
-
-.main article h1 {
-    font-size: 2em;
-}
-
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
-}
-
-.footer-container footer {
-    color: black;
-    padding: 20px 0;
-}
-
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 20px;
-}
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-.error { color: red; }
-
-form {
-    margin: auto;
-    width: 60%;
-    border:3px solid #8AC007;
-    padding: 10px;
+body {
     
+}
+
+h1, h3 {
+    margin: 0px;
+    float: left;
+}
+
+.header-container {
+    padding: 2.5%;
+    background: red;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    width: 95%;
+}
+
+nav {
+    float: right;
+}
+
+ul {
+    
+}
+
+.main-container {
+    margin: 0 2.5%;
+}
+
+
+
+input, button {
+    width: 100%;
+    height: 3em;
+}
+
+
+
+.footer-container {
+    padding: 2.5%;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    bottom: 0px;
 }
 
 
@@ -185,94 +117,15 @@ form {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 35em) {
 
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-
-    nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
-        margin: 0 0.7%;
-    }
 }
 
-@media only screen and (min-width: 768px) {
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
 
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-
-    .header-container,
-    .main aside {
-     
-    }
-
-/* ============
-    WIDE: Menu
-   ============ */
-
-    .title {
-        float: left;
-    }
-
-    nav {
-        float: right;
-        width: 38%;
-    }
-
-/* ============
-    WIDE: Main
-   ============ */
-
-    .main article {
-        float: left;
-        width: 57%;
-    }
-
-    .main aside {
-        float: right;
-        width: 28%;
-    }
-}
-
-@media only screen and (min-width: 1140px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
-        display: flex;
-        background: red;
-        flex-direction: column;
-        flex: 1;
-    }
 }
 
 /* ==========================================================================

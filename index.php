@@ -54,7 +54,6 @@ if (login_check($mysqli) == true) {
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="header-container">
-            <header class="wrapper clearfix">
                 <h1 class="title">Secure Login</h1>
                 <nav>
                     <ul>
@@ -63,29 +62,28 @@ if (login_check($mysqli) == true) {
                         <li><a href="protected_page.php"><?php  (login_check($mysqli) == true); echo htmlentities($_SESSION['username']); ?></a></li>
                     </ul>
                 </nav>
-            </header>
         </div>
         <div class="main-container">
-            <div class="main wrapper clearfix">
 
-        <?php
-        if (isset($_GET['error'])) {echo '<p class="error">Error Logging In!</p>';}
-        ?> 
-        
-        <form action="includes/process_login.php" method="post" name="login_form"> 			
-            <div class="input"><input type="e-mail" name="email" placeholder="E-mail" /></div>
-            <div class="input"><input type="password" name="password" id="password" placeholder="Password"/></div>
-            <div class="g-recaptcha" data-sitekey="6Le78QwTAAAAAIc1higa_X7ffM9-Oict99TtLTJr" data-theme="dark"></div>            
-            <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> 
-        </form>
+<div style="display:flex;justify-content:center;align-items:center;">
+<?php
+    if (isset($_GET['error'])) {echo '<p class="error">Error Logging In!</p>';}
+    ?>
 
-            </div> <!-- #main -->
+<form action="includes/process_login.php" method="post" name="login_form">
+<div class="input"><input type="e-mail" name="email" placeholder="E-mail" /></div>
+<div class="input"><input type="password" name="password" id="password" placeholder="Password"/></div>
+<div class="g-recaptcha" data-sitekey="6Le78QwTAAAAAIc1higa_X7ffM9-Oict99TtLTJr" data-theme="dark"></div>
+<input type="button" value="Login" onclick="formhash(this.form, this.form.password);" />
+</form>
+</div>
+
+
+
         </div> <!-- #main-container -->
 
         <div class="footer-container">
-            <footer class="wrapper">
                 <h3>Gemaakt door Vincent</h3>
-            </footer>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
