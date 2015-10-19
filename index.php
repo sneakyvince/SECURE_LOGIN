@@ -40,7 +40,7 @@ if (login_check($mysqli) == true) {
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         
@@ -64,19 +64,50 @@ if (login_check($mysqli) == true) {
                 </nav>
         </div>
         <div class="main-container">
-
-<div style="display:flex;justify-content:center;align-items:center;">
+                <div class="container">
+	<div class="login">
+		<h4>Login to Web App</h4>
+			<hr>
+        		<form class="login-inner" action="includes/process_login.php" method="post" name="login_form">
+    				<input type="email" class="form-control email" id="email-input" name="email" placeholder="Enter email">
+    				<input type="password" class="form-control password" id="password-input" name="password" placeholder="Password">
+                    <div class="g-recaptcha" data-sitekey="6Le78QwTAAAAAIc1higa_X7ffM9-Oict99TtLTJr" data-theme="dark"></div>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="remember" value="Remember me"> Remember me
+					</label>
+					<input class="btn btn-block btn-lg btn-success submit" type="submit" value="Login" onclick="formhash(this.form, this.form.password);">
+				</form>
+			<a href="#" class="btn btn-sm btn-primary register">Register</a>
+			<a href="#" class="btn btn-sm btn-default forgot">Forgot your password?</a>
+	</div>
+</div>    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+           
+            
+            
+            
+            
 <?php
     if (isset($_GET['error'])) {echo '<p class="error">Error Logging In!</p>';}
     ?>
-
+<!--
 <form action="includes/process_login.php" method="post" name="login_form">
 <div class="input"><input type="e-mail" name="email" placeholder="E-mail" /></div>
 <div class="input"><input type="password" name="password" id="password" placeholder="Password"/></div>
 <div class="g-recaptcha" data-sitekey="6Le78QwTAAAAAIc1higa_X7ffM9-Oict99TtLTJr" data-theme="dark"></div>
 <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" />
 </form>
-</div>
+
+-->
 
 
 
