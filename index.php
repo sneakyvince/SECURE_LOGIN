@@ -77,7 +77,7 @@ if (login_check($mysqli) == true) {
 					</label>
 					<input class="btn btn-block btn-lg btn-success submit" type="submit" value="Login" onclick="formhash(this.form, this.form.password);">
 				</form>
-			<a href="#" class="btn btn-sm btn-primary register">Register</a>
+			<a href="register.php" class="btn btn-sm btn-primary register">Register</a>
 			<a href="#" class="btn btn-sm btn-default forgot">Forgot your password?</a>
 	</div>
 </div>    

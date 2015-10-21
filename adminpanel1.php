@@ -31,7 +31,7 @@ if(isset($_SESSION['admin'])) {
 
 if($_SESSION['admin'] !=2 && $_SESSION['admin'] !=1) {
     echo '<h2>You are not an Admin!</h2>';     
-    header("refresh:5;url=.index.php?error=1");
+    header("refresh:5;url=index.php?error=1");
     exit;
 }       
 } else {
@@ -82,7 +82,7 @@ if($_SESSION['admin'] !=2 && $_SESSION['admin'] !=1) {
             echo ' <table class="tg"> ';
             while($row = $stmt->fetch(PDO::FETCH_ASSOC) ) 
             { 
-                $linkdeleteuser ="<a href='delete_user.php?id=".$row['id']."'>verwijder</a>";
+                $linkdeleteuser ="<a href='includes/delete_user.php?id=".$row['id']."'>verwijder</a>";
                 echo "<tr><td>" .$row['id']."</td><td>".$row['username']."</td><td>".$row['email']."</td><td>".$row['admin']."</td><td>".$linkdeleteuser."</td></tr>";
             }
             
